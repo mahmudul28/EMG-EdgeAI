@@ -115,8 +115,8 @@ After training, the primary model was evaluated on the held-out test repetition 
 
 Macro-averaging weights all 53 classes equally, whereas weighted-averaging weights them by support. The gap between the two shows that performance is uneven across classes, which is why macro-F1 is tracked alongside accuracy throughout this project.
 
-> [!NOTE]
-> The next section reports the FP32 benchmark of this same trained model, which gives macro-F1 = 0.7511 versus 0.750 here. The two values come from separate evaluation passes (the classification report above and the benchmarking pipeline), so a difference of about 0.001 is not a contradiction between different models. All optimization comparisons use the **FP32 benchmark values** as the reference.
+The trained model achieved **89.7% accuracy** and a **macro-F1 of 0.750** on the test set of **18,717 samples**. The FP32 benchmark reported **89.70% accuracy** and **0.7511 macro-F1**, and these FP32 benchmark values are used as the reference for all subsequent optimization experiments.
+
 
 <p align="center">
   <img src="results/primary/confusion_matrix_test.png" alt="Test-set confusion matrix of the trained model" width="60%"><br>
