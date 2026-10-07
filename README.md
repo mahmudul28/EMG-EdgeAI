@@ -119,7 +119,7 @@ Macro-averaging weights all 53 classes equally, whereas weighted-averaging weigh
 > The next section reports the FP32 benchmark of this same trained model, which gives macro-F1 = 0.7511 versus 0.750 here. The two values come from separate evaluation passes (the classification report above and the benchmarking pipeline), so a difference of about 0.001 is not a contradiction between different models. All optimization comparisons use the **FP32 benchmark values** as the reference.
 
 <p align="center">
-  <img src="results/confusion_matrix_test.png" alt="Test-set confusion matrix of the trained model" width="60%"><br>
+  <img src="results/primary/confusion_matrix_test.png" alt="Test-set confusion matrix of the trained model" width="60%"><br>
   <b>Figure: Test-set confusion matrix of the trained model (before optimization).</b>
 </p>
 
@@ -138,7 +138,7 @@ Benchmark of the same trained model in FP32, used as the reference for every opt
 | BS=1 mean latency | 5.91 ms |
 
 <p align="center">
-  <img src="results/fp32_cm.png" alt="FP32 baseline confusion matrix" width="60%"><br>
+  <img src="results/fp32/fp32_cm.png" alt="FP32 baseline confusion matrix" width="60%"><br>
   <b>Figure: FP32 baseline confusion matrix.</b>
 </p>
 
@@ -184,19 +184,19 @@ Gradual pruning raises sparsity progressively over pruning steps rather than in 
 
 <table>
   <tr>
-    <td align="center" width="50%"><img src="results/accuracy.png" alt="Accuracy comparison" width="100%"><br><sub><b>Accuracy</b></sub></td>
-    <td align="center" width="50%"><img src="results/macro_f1.png" alt="Macro-F1 comparison" width="100%"><br><sub><b>Macro-F1</b></sub></td>
+    <td align="center" width="50%"><img src="results/comparison/accuracy.png" alt="Accuracy comparison" width="100%"><br><sub><b>Accuracy</b></sub></td>
+    <td align="center" width="50%"><img src="results/comparison/macro_f1.png" alt="Macro-F1 comparison" width="100%"><br><sub><b>Macro-F1</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="results/size.png" alt="Model size comparison" width="100%"><br><sub><b>Model size</b></sub></td>
-    <td align="center"><img src="results/latency.png" alt="BS=1 latency comparison" width="100%"><br><sub><b>BS=1 CPU latency</b></sub></td>
+    <td align="center"><img src="results/comparison/size.png" alt="Model size comparison" width="100%"><br><sub><b>Model size</b></sub></td>
+    <td align="center"><img src="results/comparison/latency.png" alt="BS=1 latency comparison" width="100%"><br><sub><b>BS=1 CPU latency</b></sub></td>
   </tr>
 </table>
 
 The plot below combines **model size**, **BS=1 latency**, and **accuracy** to show the trade-offs between configurations.
 
 <p align="center">
-  <img src="results/emg_tradeoff.png" alt="Size, latency and accuracy trade-off" width="75%"><br>
+  <img src="results/comparison/emg_tradeoff.png" alt="Size, latency and accuracy trade-off" width="75%"><br>
   <b>Figure: Size / latency / accuracy trade-off.</b>
 </p>
 
@@ -205,7 +205,7 @@ The plot below combines **model size**, **BS=1 latency**, and **accuracy** to sh
 In gradual pruning, sparsity is raised step by step toward the target instead of being applied at once. The figure shows sparsity versus pruning step for both the 70% and 90% targets.
 
 <p align="center">
-  <img src="results/gradual_pruning.png" alt="Sparsity versus pruning step for gradual 70% and 90% pruning" width="75%"><br>
+  <img src="results/Gradual%20Pruning/gradual_pruning.png" alt="Sparsity versus pruning step for gradual 70% and 90% pruning" width="75%"><br>
   <b>Figure: Sparsity vs. pruning step for gradual 70% and 90% pruning.</b>
 </p>
 
@@ -217,9 +217,9 @@ Representative confusion matrices are shown below. The repository contains the m
 
 <table>
   <tr>
-    <td align="center" width="33%"><img src="results/fp32_cm.png" alt="FP32 confusion matrix" width="100%"><br><sub><b>FP32</b></sub></td>
-    <td align="center" width="33%"><img src="results/int8_dynamics_cm.png" alt="INT8 dynamic confusion matrix" width="100%"><br><sub><b>INT8 Dynamic</b></sub></td>
-    <td align="center" width="33%"><img src="results/int8_ptq_cm.png" alt="INT8 PTQ confusion matrix" width="100%"><br><sub><b>INT8 PTQ</b></sub></td>
+    <td align="center" width="33%"><img src="results/fp32/fp32_cm.png" alt="FP32 confusion matrix" width="100%"><br><sub><b>FP32</b></sub></td>
+    <td align="center" width="33%"><img src="results/INT8%20Dynamic/int8_dynamics_cm.png" alt="INT8 dynamic confusion matrix" width="100%"><br><sub><b>INT8 Dynamic</b></sub></td>
+    <td align="center" width="33%"><img src="results/INT8%20PTQ/int8_ptq_cm.png" alt="INT8 PTQ confusion matrix" width="100%"><br><sub><b>INT8 PTQ</b></sub></td>
   </tr>
 </table>
 
@@ -227,14 +227,14 @@ Representative confusion matrices are shown below. The repository contains the m
 
 <table>
   <tr>
-    <td align="center" width="33%"><img src="results/unstruct_50_cm.png" alt="Unstructured 50% confusion matrix" width="100%"><br><sub><b>Unstruct. 50%</b></sub></td>
-    <td align="center" width="33%"><img src="results/unstruct_70_cm.png" alt="Unstructured 70% confusion matrix" width="100%"><br><sub><b>Unstruct. 70%</b></sub></td>
-    <td align="center" width="33%"><img src="results/struct_50_cm.png" alt="Structured 50% confusion matrix" width="100%"><br><sub><b>Struct. 50%</b></sub></td>
+    <td align="center" width="33%"><img src="results/Unstructured%20Pruning/unstruct_50_cm.png" alt="Unstructured 50% confusion matrix" width="100%"><br><sub><b>Unstruct. 50%</b></sub></td>
+    <td align="center" width="33%"><img src="results/Unstructured%20Pruning/unstruct_70_cm.png" alt="Unstructured 70% confusion matrix" width="100%"><br><sub><b>Unstruct. 70%</b></sub></td>
+    <td align="center" width="33%"><img src="results/Structured%20Pruning/struct_50_cm.png" alt="Structured 50% confusion matrix" width="100%"><br><sub><b>Struct. 50%</b></sub></td>
   </tr>
   <tr>
-    <td align="center"><img src="results/struct_50_int8_cm.png" alt="Structured 50% plus INT8 confusion matrix" width="100%"><br><sub><b>Struct. 50% + INT8</b></sub></td>
-    <td align="center"><img src="results/gradual_70_cm.png" alt="Gradual 70% confusion matrix" width="100%"><br><sub><b>Gradual 70%</b></sub></td>
-    <td align="center"><img src="results/gradual_70_int8_cm.png" alt="Gradual 70% plus INT8 confusion matrix" width="100%"><br><sub><b>Gradual 70% + INT8</b></sub></td>
+    <td align="center"><img src="results/pruning%20%2B%20quantization/struct_50_int8_cm.png" alt="Structured 50% plus INT8 confusion matrix" width="100%"><br><sub><b>Struct. 50% + INT8</b></sub></td>
+    <td align="center"><img src="results/Gradual%20Pruning/gradual_70_cm.png" alt="Gradual 70% confusion matrix" width="100%"><br><sub><b>Gradual 70%</b></sub></td>
+    <td align="center"><img src="results/pruning%20%2B%20quantization/gradual_70_int8_cm.png" alt="Gradual 70% plus INT8 confusion matrix" width="100%"><br><sub><b>Gradual 70% + INT8</b></sub></td>
   </tr>
 </table>
 
